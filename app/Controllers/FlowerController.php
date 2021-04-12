@@ -48,6 +48,7 @@ public function index()
         $flowerModel=new FlowerModel;
         $data=$flowerModel->find($id);
         //echo $data['image'];
+        if($data['image'])
         unlink($data['image']);
         $flowerModel->where('id',$id)->delete($id);
        return $this->response->redirect(base_url('/'));
@@ -66,6 +67,7 @@ public function index()
         
         $data=$flowerModel->find($id);
         //echo $data['image'];
+       if($data['image'])
         unlink($data['image']);
         
         $url="./images/".uniqid(rand()).$bau->getName();
