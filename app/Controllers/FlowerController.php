@@ -63,15 +63,23 @@ public function index()
         $flowerModel=new FlowerModel;
         $id=$this->request->getVar('id');
         $bau=$this->request->getFile('poza');
+        
+        $data=$flowerModel->find($id);
+        //echo $data['image'];
+        unlink($data['image']);
+        
         $url="./images/".uniqid(rand()).$bau->getName();
     $data=array(
         'title'=>$this->request->getVar('title'),
         'image'=>$url
     );
     move_uploaded_file($bau, $url);
-
+    
     //update data
     $flowerModel->update($id,$data);
+    
+
   return $this->response->redirect(base_url('/'));
+        
     }
 }

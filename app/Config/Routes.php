@@ -35,7 +35,7 @@ $routes->setAutoRoute(true);
 $routes->get('/', 'FlowerController::index');
 $routes->get('/upload', 'FlowerController::upload');
 $routes->get('/store', 'FlowerController::store');
-$routes->get('/store', 'FlowerController::store');
+//$routes->get('/store', 'FlowerController::store');
 $routes->get('/view/{id}', 'FlowerController::view');
 $routes->get('/delete/{id}', 'FlowerController::delete');
 $routes->get('/edit/{id}', 'FlowerController::edit');
