@@ -74,12 +74,8 @@ public function index()
         'image'=>$url
     );
     move_uploaded_file($bau, $url);
-    
     //update data
     $flowerModel->update($id,$data);
-    
-
-  return $this->response->redirect(base_url('/'));
-        
+  return $this->response->redirect(base_url('/')); 
     }
 }
